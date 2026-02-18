@@ -1,4 +1,7 @@
 import requests
+from flask import Flask, request, jsonify
+
+app=Flask (__name__)
 
 def emotion_detector(text_to_analyse):
     if not text_to_analyse:
