@@ -1,3 +1,13 @@
+"""
+emotion_detection.py
+
+This module contains functions for detecting emotions based on input data.
+It includes methods for processing input, analyzing emotion patterns, and
+returning results.
+
+The user is using Cloud IDE Kubernetes tools to complete the Developing AI Applications with Python and Flask course.
+"""
+
 import requests
 from flask import Flask, request, jsonify, render_template_string
 import requestsy
@@ -5,6 +15,15 @@ import requestsy
 app=Flask (__name__)
 
 def emotion_detector(text_to_analyse):
+     """
+    Detects emotions from the given text input using Watson NLP service.
+
+    Args:
+        text_to_analyse (str): The text to analyze for emotions.
+
+    Returns:
+        dict: A dictionary containing emotion scores and dominant emotion.
+    """
     if not text_to_analyse:
         return {
             'anger': 0,
