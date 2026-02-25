@@ -1,0 +1,42 @@
+"""Unit tests for emotion detection dominant emotion results."""
+
+from EmotionDetection import emotion_detector
+
+
+def test_emotion_detector_joy():
+    """Test joy dominant emotion."""
+    response = emotion_detector("I am glad this happened")
+    assert response["dominant_emotion"] == "joy"
+
+
+def test_emotion_detector_anger():
+    """Test anger dominant emotion."""
+    response = emotion_detector("I am really mad about this")
+    assert response["dominant_emotion"] == "anger"
+
+
+def test_emotion_detector_disgust():
+    """Test disgust dominant emotion."""
+    response = emotion_detector("I feel disgusted just hearing about this")
+    assert response["dominant_emotion"] == "disgust"
+
+
+def test_emotion_detector_sadness():
+    """Test sadness dominant emotion."""
+    response = emotion_detector("I am so sad about this")
+    assert response["dominant_emotion"] == "sadness"
+
+
+def test_emotion_detector_fear():
+    """Test fear dominant emotion."""
+    response = emotion_detector("I am really afraid that this will happen")
+    assert response["dominant_emotion"] == "fear"
+
+
+if __name__ == "__main__":
+    test_emotion_detector_joy()
+    test_emotion_detector_anger()
+    test_emotion_detector_disgust()
+    test_emotion_detector_sadness()
+    test_emotion_detector_fear()
+    print("All tests passed!")
